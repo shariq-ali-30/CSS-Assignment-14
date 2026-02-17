@@ -67,6 +67,8 @@ body {
     font-size: 20px;
     font-weight: bold;
     padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
     cursor: pointer;
     margin-top: 4px;
 }
