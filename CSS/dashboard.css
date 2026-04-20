@@ -418,6 +418,13 @@
     font-size: 15px;
     line-height: 22px;
     letter-spacing: 0.5px;
+    display: inline;
+}
+
+.post-description span {
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
 }
 
 .post-image img {

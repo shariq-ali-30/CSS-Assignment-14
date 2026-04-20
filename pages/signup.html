@@ -22,14 +22,14 @@
         <hr>
         <form>
             <div class="nameInputs">
-                <input type="text" placeholder="First name">
-                <input type="text" placeholder="Surname">
+                <input type="text" placeholder="First name" id="firstNameInput">
+                <input type="text" placeholder="Surname" id="lastNameInput">
             </div>
 
             <p class="para gray">Date of birth <span>?</span></p>
             
             <div class="dob">
-                <select class="day">
+                <select class="day" id="dayInput">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -63,7 +63,7 @@
                     <option>31</option>
                 </select>
 
-                <select class="month">
+                <select class="month" id="monthInput">
                     <option>Jan</option>
                     <option>Feb</option>
                     <option>Mar</option>
@@ -78,7 +78,7 @@
                     <option>Dec</option>
                 </select>
 
-                <select class="year">
+                <select class="year" id="yearInput">
                     <option>2026</option>
                     <option>2025</option>
                     <option>2024</option>
@@ -219,18 +219,20 @@
             </div>
 
             <div class="inputFields">
-                <input type="text" placeholder="Mobile number or email address">
-                <input type="password" placeholder="New password">
+                <input type="text" placeholder="Mobile number or email address" id="emailInput">
+                <input type="password" placeholder="New password" id="passwordInput">
             </div>
 
             <p class="bottom-text">People who use our service may have uploaded your contact information to Facebook <span>Learn more.</span></p>
             <p class="bottom-text">By clicking Sign up, you agree to our <span>Terms</span>, <span>Privacy Policy</span> and <span>Cookies Policy.</span> You may receive SMS notifications from us and can opt out at any time.</p>
 
-            <a href="dashboard.html" class="btn2">Sign up</a>
+            <a href="javascript:void(0)" class="btn2" onclick="getValues()">Sign up</a>
 
             <a href="../index.html" class="bottom-link">Already have an account?</a>
         </form>
     </div>
+
+    <script src="/JS/signup.js"></script>
 </body>
 
 </html>
