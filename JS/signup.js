@@ -8,7 +8,7 @@ var passwordInput = document.getElementById("passwordInput")
 
 function getValues() {
 
-    if (firstNameInput.value == "" || lastNameInput.value == "" || dayInput.value == "" || monthInput.value == "" || yearInput.value == "" || emailInput.value == "" || passwordInput.value == "") {
+    if (firstNameInput.value.trim() == "" || lastNameInput.value.trim() == "" || dayInput.value.trim() == "" || monthInput.value.trim() == "" || yearInput.value.trim() == "" || emailInput.value.trim() == "" || passwordInput.value.trim() == "") {
         alert("All fields must be filled")
     } else {
         console.log("First Name:", firstNameInput.value)
