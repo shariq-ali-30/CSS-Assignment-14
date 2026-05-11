@@ -20,7 +20,7 @@
             <p class="gray">It's quick and easy.</p>
         </div>
         <hr>
-        <form>
+        <form onsubmit="signupHandler(event)">
             <div class="nameInputs">
                 <input type="text" placeholder="First name" id="firstNameInput">
                 <input type="text" placeholder="Surname" id="lastNameInput">
@@ -208,13 +208,13 @@
 
             <div class="gender-box">
                 <label class="gender">
-                    Female<input type="radio" name="gender">
+                    Female<input type="radio" name="gender" value="female">
                 </label>
                 <label class="gender">
-                    Male<input type="radio" name="gender">
+                    Male<input type="radio" name="gender" value="male">
                 </label>
                 <label class="gender">
-                    Other<input type="radio" name="gender">
+                    Other<input type="radio" name="gender" value="other">
                 </label>
             </div>
 
@@ -226,12 +226,14 @@
             <p class="bottom-text">People who use our service may have uploaded your contact information to Facebook <span>Learn more.</span></p>
             <p class="bottom-text">By clicking Sign up, you agree to our <span>Terms</span>, <span>Privacy Policy</span> and <span>Cookies Policy.</span> You may receive SMS notifications from us and can opt out at any time.</p>
 
-            <a href="javascript:void(0)" class="btn2" onclick="getValues()">Sign up</a>
+            <button class="btn2">Sign up</button>
 
             <a href="../index.html" class="bottom-link">Already have an account?</a>
         </form>
     </div>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/JS/signup.js"></script>
 </body>
 

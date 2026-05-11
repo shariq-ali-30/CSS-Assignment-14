@@ -5,16 +5,60 @@ var monthInput = document.getElementById("monthInput")
 var yearInput = document.getElementById("yearInput")
 var emailInput = document.getElementById("emailInput")
 var passwordInput = document.getElementById("passwordInput")
+var gender = document.getElementsByName("gender")
 
-function getValues() {
+var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
-    if (firstNameInput.value.trim() == "" || lastNameInput.value.trim() == "" || dayInput.value.trim() == "" || monthInput.value.trim() == "" || yearInput.value.trim() == "" || emailInput.value.trim() == "" || passwordInput.value.trim() == "") {
-        alert("All fields must be filled")
+
+var user = {}
+var allUsers = []
+
+function sweetie(icon, title, messege) {
+    Swal.fire({
+        icon: icon,
+        title: title,
+        text: messege,
+    });
+}
+
+function signupHandler(e) {
+    e.preventDefault()
+
+    if (!firstNameInput.value.trim() || !lastNameInput.value.trim() || !dayInput.value.trim() || !monthInput.value.trim() || !yearInput.value.trim() || !emailInput.value.trim() || !passwordInput.value.trim()) {
+        return sweetie("error", "Incomplete Form", "All fields are required!")
     } else {
-        console.log("First Name:", firstNameInput.value)
-        console.log("Last Name:", lastNameInput.value)
-        console.log("Date of birth:", dayInput.value, monthInput.value, yearInput.value)
-        console.log("Email:", emailInput.value)
-        console.log("Password:", passwordInput.value)
+        var dob = dayInput.value + " " + monthInput.value + " " + yearInput.value
     }
+
+    user.firstName = firstNameInput.value
+    user.lastName = lastNameInput.value
+    user.dob = dob
+    user.email = emailInput.value
+    user.password = passwordInput.value
+
+    var genderSelected = false
+    for (let i = 0; i < gender.length; i++) {
+        if (gender[i].checked) {
+            genderSelected = true
+            user.gender = gender[i].value
+        }
+    }
+
+    if (!emailRegex.test(user.email)) {
+        return sweetie("error", "Invalid Email", "Please enter a valid email address.")
+    }
+
+    if (!genderSelected) {
+        return sweetie("error", "Incomplete Form", "All fields are required!")
+    }
+
+    if (user.password.length < 8)
+        return sweetie("error", "Password Too Short", "Password must be at least 8 characters long.")
+
+
+    allUsers.push(user)
+    console.log(user)
+    console.log(allUsers)
+    sweetie("success", "Signup Successful", "Your account has been created successfully.")
+
 }

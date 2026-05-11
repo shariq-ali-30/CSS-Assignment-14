@@ -150,10 +150,10 @@ hr {
     border-radius: 6px;
     color: #fff;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: bold;
     margin: 20px auto;
-    padding: 15px 60px;
+    padding: 15px 55px;
     width: fit-content;
     align-self: center;
     cursor: pointer;
@@ -202,7 +202,7 @@ hr {
     }
 
     .btn2 {
-        font-size: 15px;
+        font-size: 17px;
         padding: 12px 40px;
     }
 
