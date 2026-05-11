@@ -10,8 +10,8 @@ function sweetie(icon, title, messege) {
 }
 
 function loginHandler(e) {
-    e.preventDefault()
     if (!emailInput.value.trim() || !passwordInput.value.trim()) {
+        e.preventDefault()
         return sweetie("error", "Incomplete Form", "All fields are required!")
     }
 }
