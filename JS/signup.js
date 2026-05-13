@@ -18,6 +18,7 @@ function sweetie(icon, title, messege) {
         icon: icon,
         title: title,
         text: messege,
+        heightAuto: false
     });
 }
 
@@ -41,6 +42,7 @@ function signupHandler(e) {
         if (gender[i].checked) {
             genderSelected = true
             user.gender = gender[i].value
+            gender[i].checked = false
         }
     }
 
@@ -49,11 +51,16 @@ function signupHandler(e) {
     }
 
     if (!genderSelected) {
-        return sweetie("error", "Incomplete Form", "All fields are required!")
+        return sweetie("error", "Incomplete Form", "Please select gender.")
     }
 
     if (user.password.length < 8)
         return sweetie("error", "Password Too Short", "Password must be at least 8 characters long.")
+
+    firstNameInput.value = ""
+    lastNameInput.value = ""
+    emailInput.value = ""
+    passwordInput.value = ""
 
 
     allUsers.push(user)

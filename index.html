@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="images/Facebook_Logo.png">
     <link rel="stylesheet" href="CSS/style.css">
     <title>Facebook - Log in</title>
@@ -16,10 +19,14 @@
     </div>
 
     <div class="right-content">
-        <form>
+        <form onsubmit="loginHandler(event)">
             <input id="emailInput" type="email" placeholder="Email address or phone number">
-            <input id="passwordInput" type="password" placeholder="Password">
-            <a onclick="loginHandler(event)" href="pages/dashboard.html" class="btn1">Log in</a>
+            <div>
+                <input id="passwordInput" type="password" placeholder="Password">
+                <i class="fa-regular fa-eye" id="toggleIcon" onclick="eyeToggle()"></i>
+            </div>
+           
+            <button class="btn1">Log in</button>
             <a href="" class="forget-link">Forgotten password?</a>
             <hr>
             <a href="pages/signup.html" class="btn2">Create new account</a>
