@@ -317,6 +317,133 @@ body {
     color: #65686c;
 }
 
+.post-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 100vh;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-modal-container .post-modal {
+    width: 500px;
+    background-color: #fff;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.post-modal-container .post-modal .modal-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    border-bottom: 1px solid #CED0D4;
+}
+
+.post-modal-container .post-modal .modal-header h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.post-modal-container .post-modal .modal-header div {
+    position: absolute;
+    right: 15px;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    background-color: #E4E6EB;
+    color: #8c8d8f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.post-modal-container .post-modal .modal-body {
+    padding: 15px;
+}
+
+.post-modal-container .post-modal .modal-body .user-details {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.post-modal-container .post-modal .modal-body .user-details img {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+.post-modal-container .post-modal .modal-body .user-details p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #050505;
+}
+
+.post-modal-container .post-modal .modal-body textarea {
+    height: 150px;
+    width: 100%;
+    margin-top: 14px;
+    font-size: 19px;
+    resize: none;
+    border: none;
+    outline: none;
+    scrollbar-width: none;
+}
+
+.post-modal-container .post-modal .modal-body .file-upload {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border: 1px solid #CED0D4;
+    height: 52px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.post-modal-container .post-modal .modal-body .file-upload p {
+    font-weight: 400;
+}
+
+.post-modal-container .post-modal .modal-body .file-upload label {
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.post-modal-container .post-modal .modal-body .file-upload label:hover {
+    background-color: #F2F2F2;
+}
+
+.post-modal-container .post-modal .modal-body .file-upload i {
+    font-size: 25px;
+}
+
+.post-modal-container .post-modal .modal-body button {
+    margin-top: 15px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #1877F2;
+    width: 100%;
+    height: 43px;
+    cursor: pointer;
+}
+
+.post-modal-container .post-modal .modal-body button:active {
+    background-color: #0e6eeb;
+}
+
 .post {
     width: 100%;
     background-color: #fff;
@@ -692,6 +819,13 @@ body {
     .like-detils .left span:hover,
     .like-detils .right span:hover {
         text-decoration: none;
+    }
+
+
+    .post-modal-container .post-modal .modal-body .file-upload label,
+    .post-modal-container .post-modal .modal-body button,
+    .post-modal-container .post-modal .modal-header div {
+        cursor: initial;
     }
 
 

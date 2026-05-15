@@ -9,6 +9,8 @@ var gender = document.getElementsByName("gender")
 
 var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
+var toggleIcon = document.getElementById("toggleIcon")
+
 
 var user = {}
 var allUsers = []
@@ -20,6 +22,16 @@ function sweetie(icon, title, messege) {
         text: messege,
         heightAuto: false
     });
+}
+
+function eyeToggle() {
+    if (toggleIcon.className == "fa-regular fa-eye") {
+        passwordInput.type = "text"
+        toggleIcon.className = "fa-regular fa-eye-slash"
+    } else {
+        passwordInput.type = "password"
+        toggleIcon.className = "fa-regular fa-eye"
+    }
 }
 
 function signupHandler(e) {

@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="../images/Facebook_Logo.png">
     <link rel="stylesheet" href="../CSS/signup.css">
     <title>Facebook - Sign up</title>
@@ -27,7 +30,7 @@
             </div>
 
             <p class="para gray">Date of birth <span>?</span></p>
-            
+
             <div class="dob">
                 <select class="day" id="dayInput">
                     <option>1</option>
@@ -220,11 +223,18 @@
 
             <div class="inputFields">
                 <input type="text" placeholder="Mobile number or email address" id="emailInput">
-                <input type="password" placeholder="New password" id="passwordInput">
+                <div>
+                    <input id="passwordInput" type="password" placeholder="New password">
+                    <i class="fa-regular fa-eye" id="toggleIcon" onclick="eyeToggle()"></i>
+                </div>
             </div>
 
-            <p class="bottom-text">People who use our service may have uploaded your contact information to Facebook <span>Learn more.</span></p>
-            <p class="bottom-text">By clicking Sign up, you agree to our <span>Terms</span>, <span>Privacy Policy</span> and <span>Cookies Policy.</span> You may receive SMS notifications from us and can opt out at any time.</p>
+            <p class="bottom-text">People who use our service may have uploaded your contact information to Facebook
+                <span>Learn more.</span>
+            </p>
+            <p class="bottom-text">By clicking Sign up, you agree to our <span>Terms</span>, <span>Privacy Policy</span>
+                and <span>Cookies Policy.</span> You may receive SMS notifications from us and can opt out at any time.
+            </p>
 
             <button class="btn2">Sign up</button>
 

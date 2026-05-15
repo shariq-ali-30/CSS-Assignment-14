@@ -73,6 +73,8 @@ body {
 
 .right-content i {
     position: absolute;
+    padding: 5px 20px 5px 5px;
+    border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
     right: 14px;
