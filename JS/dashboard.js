@@ -1,15 +1,15 @@
-var postDescription = document.getElementById("post-description")
-var expand = document.getElementById("expand")
-var fullText = postDescription.innerText.slice(0)
+var descriptionText = document.getElementsByClassName("description-text")[0]
+var expand = document.getElementsByClassName("expand")[0]
+var fullText = descriptionText.innerText.slice(0)
 var shortText = fullText.slice(0, 115)
-postDescription.innerText = shortText
+descriptionText.innerText = shortText
 
 function expandText() {
     if (expand.innerText == "... See more") {
-        postDescription.innerText = fullText
+        descriptionText.innerText = fullText
         expand.innerText = "... See less"
     } else {
-        postDescription.innerText = shortText
+        descriptionText.innerText = shortText
         expand.innerText = "... See more"
     }
 }
@@ -18,21 +18,46 @@ var modalBtn = document.getElementById("modalBtn")
 var modalContainer = document.getElementsByClassName("post-modal-container")[0]
 var postDescription = document.getElementById("postDescription")
 var fileUpload = document.getElementById("fileUpload")
-var postContainer = document.getElementsByClassName("posts")[0]
-var firstPost = postContainer.children[0]
-console.log(firstPost);
+var imageName = document.getElementById("imageName")
+
+var dropdownMenu = document.getElementsByClassName("dropdown-menu")[0]
+var currentUser = {
+        firstName: "Shariq",
+        lastName: "Ali",
+        email: "shariq3072007@gmail.com",
+        password: "12345678"
+    }
+
 
 
 function openModal() {
-    modalContainer.style.display = "flex"
+    modalContainer.classList.add("active")    
 }
 
 function closeModal() {
-    modalContainer.style.display = "none"
+    modalContainer.classList.remove("active")
+}
+
+function showFileName() {
+    imageName.innerText = fileUpload.files[0].name
 }
 
 function createPost() {
-    var imageURL = URL.createObjectURL(fileUpload.files[0])
+    if (!fileUpload.files.length == 0) {
+        var imageURL = URL.createObjectURL(fileUpload.files[0])
+        var imageTag = `<div class="post-image">
+                            <img src=${imageURL}>
+                        </div>`
+    } else {
+        imageTag = ""
+    }
+
+    if (fileUpload.files.length == 0 && postDescription.value.trim() == "") {
+        return sweetie("error", "Field is empty", "Please write something.")
+    }
+
+    var postContainer = document.getElementsByClassName("posts")[0]
+    var firstPost = postContainer.children[0]
 
     var post = document.createElement("div")
     post.setAttribute("class", "post")
@@ -57,13 +82,11 @@ function createPost() {
                     </div>
 
                     <div class="post-description">
-                        <p id="post-description">${postDescription.value}</p>
+                        <p class="description-text">${postDescription.value}</p>
                     </div>
                 </div>
 
-                <div class="post-image">
-                    <img src=${imageURL}>
-                </div>
+                ${imageTag}
 
                 <div class="like-detils">
 
@@ -96,7 +119,31 @@ function createPost() {
 
             </div>`
 
-            postContainer.insertBefore(post, firstPost)
-            postDescription.value = ""
-            modalContainer.style.display = "none"
+    postContainer.insertBefore(post, firstPost)
+    postDescription.value = ""
+    fileUpload.value = ""
+    imageName.innerText = ""
+    modalContainer.style.display = "none"
+}
+
+function sweetie(icon, title, messege) {
+    Swal.fire({
+        icon: icon,
+        title: title,
+        text: messege,
+        heightAuto: false
+    });
+}
+
+function toggleMenu() {
+    if (dropdownMenu.classList.contains("active")) {
+        dropdownMenu.classList.remove("active")
+    } else {
+        dropdownMenu.classList.add("active")
+    }
+}
+
+function logoutHandler() {
+    currentUser = null
+    window.location.href = "/index.html"
 }
