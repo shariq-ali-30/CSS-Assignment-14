@@ -123,7 +123,7 @@ function createPost() {
     postDescription.value = ""
     fileUpload.value = ""
     imageName.innerText = ""
-    modalContainer.style.display = "none"
+    modalContainer.classList.remove("active")
 }
 
 function sweetie(icon, title, messege) {
