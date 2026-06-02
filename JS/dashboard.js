@@ -4,6 +4,115 @@ var fullText = descriptionText.innerText.slice(0)
 var shortText = fullText.slice(0, 115)
 descriptionText.innerText = shortText
 
+var modalBtn = document.getElementById("modalBtn")
+var modalContainer = document.getElementsByClassName("post-modal-container")[0]
+var postDescription = document.getElementById("postDescription")
+var fileUpload = document.getElementById("fileUpload")
+var imageName = document.getElementById("imageName")
+
+var dropdownMenu = document.getElementsByClassName("dropdown-menu")[0]
+var currentUser = {
+    firstName: "Shariq",
+    lastName: "Ali",
+    email: "shariq3072007@gmail.com",
+    password: "12345678"
+}
+
+var leftSidebar = document.querySelector(".left-sidebar")
+var contactList = document.querySelector(".contacts")
+
+const leftSidebarItems = [
+    {
+        name: "Shariq Ali",
+        image: "../images/profile.jpg"
+    },
+    {
+        name: "Meta AI",
+        image: "../images/meta.png"
+    },
+    {
+        name: "Friends",
+        image: "../images/friends.webp"
+    },
+    {
+        name: "Memories",
+        image: "../images/memories.png"
+    },
+    {
+        name: "Saved",
+        image: "../images/saved.webp"
+    },
+    {
+        name: "Groups",
+        image: "../images/groups.png"
+    },
+    {
+        name: "Reels",
+        image: "../images/reels.png"
+    },
+    {
+        name: "Marketplace",
+        image: "../images/marketplace.png"
+    },
+    {
+        name: "Feeds",
+        image: "../images/feeds.webp"
+    },
+    {
+        name: "Ads Manager",
+        image: "../images/ads-manager.png"
+    },
+    {
+        name: "Events",
+        image: "../images/events.webp"
+    },
+    {
+        name: "Birthday",
+        image: "../images/birthday.png"
+    }
+]
+
+const contacts = [
+    {
+        name: "Meta AI",
+        image: "../images/meta.png"
+    },
+    {
+        name: "Muhammad Mahad",
+        image: "../images/friend-profile3.png"
+    },
+    {
+        name: "Muhammad Rayyan",
+        image: "../images/friend-profile2.png"
+    },
+    {
+        name: "Shah Rukh",
+        image: "../images/friend-profile1.jpg"
+    }
+]
+
+function loadApp() {
+    // for left sidebar
+    for (let i = 0; i < leftSidebarItems.length; i++) {
+        var leftSidebarContent = document.createElement("div")
+        leftSidebarContent.innerHTML = `<div>
+                                            <div class="profile"><img src=${leftSidebarItems[i].image}></div>
+                                        </div>
+                                        <span>${leftSidebarItems[i].name}</span>`
+        leftSidebar.appendChild(leftSidebarContent)
+    }
+
+    // for right sidebar
+    for (let i = 0; i < contacts.length; i++) {
+        var contactContent = document.createElement("div")
+        contactContent.classList.add("contact-profile")
+        contactContent.innerHTML = `<img src=${contacts[i].image} style="border: 1px solid gray;">
+                                    <span>${contacts[i].name}</span>`
+        contactList.appendChild(contactContent)
+    }
+}
+loadApp()
+
 function expandText() {
     if (expand.innerText == "... See more") {
         descriptionText.innerText = fullText
@@ -14,24 +123,8 @@ function expandText() {
     }
 }
 
-var modalBtn = document.getElementById("modalBtn")
-var modalContainer = document.getElementsByClassName("post-modal-container")[0]
-var postDescription = document.getElementById("postDescription")
-var fileUpload = document.getElementById("fileUpload")
-var imageName = document.getElementById("imageName")
-
-var dropdownMenu = document.getElementsByClassName("dropdown-menu")[0]
-var currentUser = {
-        firstName: "Shariq",
-        lastName: "Ali",
-        email: "shariq3072007@gmail.com",
-        password: "12345678"
-    }
-
-
-
 function openModal() {
-    modalContainer.classList.add("active")    
+    modalContainer.classList.add("active")
 }
 
 function closeModal() {

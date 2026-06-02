@@ -208,7 +208,8 @@ body {
 }
 
 .left-sidebar>div,
-.right-sidebar .contact-list>div {
+.right-sidebar .contact-list>.contacts>div,
+.right-sidebar .contact-list>.groups>div {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -220,12 +221,13 @@ body {
 }
 
 .left-sidebar>div:hover,
-.right-sidebar .contact-list>div:hover {
+.right-sidebar .contact-list>.contacts>div:hover,
+.right-sidebar .contact-list>.groups>div:hover {
     background-color: #E6E8EA;
 }
 
 .left-sidebar span,
-.contact-list>div>span {
+.contact-list>.groups>div>span {
     font-weight: 600;
     font-size: 15px;
 }
@@ -395,7 +397,7 @@ body {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease-out;
 }
 
 .post-modal-container.active {
@@ -410,7 +412,7 @@ body {
     border-radius: 8px;
     opacity: 0;
     transform: translateY(-30px);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-out;
 }
 
 .post-modal-container.active .post-modal {
@@ -924,11 +926,12 @@ body {
     .nav-right .icon,
     .dropdown-menu .option,
     .nav-left img,
-    .nav-center div {
+    .nav-center div,
+    .top-bar .modal-btn {
         cursor: initial;
     }
 
-    
+
 
 
 }
