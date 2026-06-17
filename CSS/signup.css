@@ -12,10 +12,12 @@ body {
     justify-content: center;
     background-color: #F2F4F7;
     padding-bottom: 20px;
+    min-height: 100vh;
 }
 
 .top-content img {
     width: 300px;
+    margin: 15px 0;
 }
 
 .bottom-content {
@@ -76,12 +78,10 @@ hr {
     margin-bottom: 6px;
 }
 
-.para span {
-    background-color: gray;
-    padding: 0 3px;
+.para i {
+    color: gray;
+    font-size: 13px;
     cursor: pointer;
-    border-radius: 50%;
-    color: white;
 }
 
 .day,
@@ -199,8 +199,9 @@ hr {
 }
 
 @media (max-width: 460px) {
-    body {
-        height: 100vh;
+
+    .top-content {
+        margin-bottom: 30px;
     }
 
     .top-content img {
@@ -246,5 +247,12 @@ hr {
 
     hr {
         display: none;
+    }
+
+    .inputFields,
+    .bottom-text,
+    .btn2,
+    .bottom-link {
+        cursor: default;
     }
 }

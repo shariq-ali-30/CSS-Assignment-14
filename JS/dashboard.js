@@ -11,20 +11,28 @@ var fileUpload = document.getElementById("fileUpload")
 var imageName = document.getElementById("imageName")
 
 var dropdownMenu = document.getElementsByClassName("dropdown-menu")[0]
-var currentUser = {
-    firstName: "Shariq",
-    lastName: "Ali",
-    email: "shariq3072007@gmail.com",
-    password: "12345678"
+
+if (!localStorage.getItem("currentUser")) {
+    localStorage.setItem("currentUser", JSON.stringify(null))
 }
+
+let currentUser = JSON.parse(localStorage.getItem("currentUser"))
+
+if (currentUser == null) {
+    window.location.href = "../index.html"
+}
+
+var userName = document.getElementById("userName")
+
+userName.innerText = `${currentUser.firstName} ${currentUser.lastName}`
 
 var leftSidebar = document.querySelector(".left-sidebar")
 var contactList = document.querySelector(".contacts")
 
 const leftSidebarItems = [
     {
-        name: "Shariq Ali",
-        image: "../images/profile.jpg"
+        name: `${currentUser.firstName} ${currentUser.lastName}`,
+        image: "../images/friend-profile3.png"
     },
     {
         name: "Meta AI",
@@ -238,5 +246,6 @@ function toggleMenu() {
 
 function logoutHandler() {
     currentUser = null
+    localStorage.setItem("currentUser", JSON.stringify(currentUser))
     window.location.href = "/index.html"
 }

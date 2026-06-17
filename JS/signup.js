@@ -11,9 +11,11 @@ var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
 
 var toggleIcon = document.getElementById("toggleIcon")
 
+if (!localStorage.getItem("allUsers")) {
+    localStorage.setItem("allUsers", JSON.stringify([]))
+}
 
-var user = {}
-var allUsers = []
+let allUsers = JSON.parse(localStorage.getItem("allUsers"))
 
 function sweetie(icon, title, messege) {
     Swal.fire({
@@ -36,6 +38,8 @@ function eyeToggle() {
 
 function signupHandler(e) {
     e.preventDefault()
+
+    var user = {}
 
     if (!firstNameInput.value.trim() || !lastNameInput.value.trim() || !dayInput.value.trim() || !monthInput.value.trim() || !yearInput.value.trim() || !emailInput.value.trim() || !passwordInput.value.trim()) {
         return sweetie("error", "Incomplete Form", "All fields are required!")
@@ -73,11 +77,16 @@ function signupHandler(e) {
     lastNameInput.value = ""
     emailInput.value = ""
     passwordInput.value = ""
-
-
+    dayInput.selectedIndex = 0
+    monthInput.selectedIndex = 0
+    yearInput.selectedIndex = 0
+    
     allUsers.push(user)
-    console.log(user)
+    localStorage.setItem("allUsers", JSON.stringify(allUsers))
+
     console.log(allUsers)
     sweetie("success", "Signup Successful", "Your account has been created successfully.")
-
+    setTimeout(() => {
+        window.location.href = "../index.html"
+    }, 3000);
 }
