@@ -41,7 +41,7 @@
                         <img src="../images/friend-profile3.png">
                     </div>
                     <div>
-                        <p id="userName">Shariq Ali</p>
+                        <p class="userName">Shariq Ali</p>
                         <span>View your profile</span>
                     </div>
                 </div>
@@ -64,21 +64,14 @@
 
     <section class="main">
         <div class="left-sidebar">
-
-            <!-- <div>
-                <div>
-                    <div class="profile"><img src="../images/profile.jpg"></div>
-                </div>
-                <span>Shariq Ali</span>
-            </div> -->
-
         </div>
 
         <div class="main-content">
 
             <div class="top-bar">
                 <div class="profile"><img src="../images/friend-profile3.png"></div>
-                <div class="modal-btn" id="modalBtn" onclick="openModal()">Whats's on your mind, Shariq?</div>
+                <div class="modal-btn" id="modalBtn" onclick="openModal()">Whats's on your mind, <span
+                        id="firstName">Shariq?</span></div>
                 <div class="icons">
                     <div class="hidden"><i class="fa-solid fa-video"></i></div>
                     <div><i class="fa-solid fa-images"></i></div>
@@ -107,8 +100,8 @@
 
                     <div class="modal-body">
                         <div class="user-details">
-                            <img src="/images/profile.jpg">
-                            <p>Shariq Ali</p>
+                            <img src="/images/friend-profile3.png">
+                            <p class="userName">Shariq Ali</p>
                         </div>
 
                         <textarea placeholder="What's on your mind?" id="postDescription"></textarea>
@@ -142,15 +135,14 @@
                                             Follow</span>
                                     </div>
                                     <div class="time-contniner">
-                                        <span class="time">4h</span> <span>• <i
-                                                class="fa-solid fa-earth-asia"></i></span>
+                                        <span class="time">4h</span> <span>• <i Xclass="fa-solid fa-earth-asia"></i></span>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="right">
                                 <div><i class="fa-solid fa-ellipsis"></i></div>
-                                <div><i class="fa-solid fa-xmark"></i></div>
+                                <div onclick="deletePost(this)"><i class="fa-solid fa-xmark"></i></div>
                             </div>
                         </div>
 
@@ -164,7 +156,7 @@
                                 interesting
                                 to see how these international players adapt to the conditions and whether this bold
                                 move
-                                pays off in the long run</p><span class="expand" onclick="expandText(this)">... See
+                                pays off in the long run.</p><span class="expand" onclick="expandText(this)">see
                                 more</span>
                         </div>
                     </div>
@@ -223,7 +215,7 @@
 
                             <div class="right">
                                 <div><i class="fa-solid fa-ellipsis"></i></div>
-                                <div><i class="fa-solid fa-xmark"></i></div>
+                                <div onclick="deletePost(this)"><i class="fa-solid fa-xmark"></i></div>
                             </div>
                         </div>
 
@@ -234,8 +226,8 @@
                                 International Baccalaureate, and High School Diploma streams are encouraged to apply and
                                 take advantage of this opportunity. Don't miss your chance to join a diverse and dynamic
                                 academic community, explore world-class faculty, and benefit from generous scholarship
-                                programs designed to support talented students throughout their academic journey
-                            </p><span class="expand" onclick="expandText(this)">... See more</span>
+                                programs designed to support talented students throughout their academic journey.
+                            </p><span class="expand" onclick="expandText(this)">see more</span>
                         </div>
                     </div>
 
@@ -294,7 +286,7 @@
 
                             <div class="right">
                                 <div><i class="fa-solid fa-ellipsis"></i></div>
-                                <div><i class="fa-solid fa-xmark"></i></div>
+                                <div onclick="deletePost(this)"><i class="fa-solid fa-xmark"></i></div>
                             </div>
                         </div>
 
@@ -310,7 +302,7 @@
                                 jahan fans apni team ke liye poori shiddat se kharay hote hain. Ab dekhna yeh hai ke is
                                 dafa
                                 kaun jeetega aur kaun banega asal champion. 🔥
-                            </p><span class="expand" onclick="expandText(this)">... See more</span>
+                            </p><span class="expand" onclick="expandText(this)">see more</span>
                         </div>
                     </div>
 
@@ -369,7 +361,7 @@
 
                             <div class="right">
                                 <div><i class="fa-solid fa-ellipsis"></i></div>
-                                <div><i class="fa-solid fa-xmark"></i></div>
+                                <div onclick="deletePost(this)"><i class="fa-solid fa-xmark"></i></div>
                             </div>
                         </div>
 
@@ -383,7 +375,7 @@
                                 har ball ek nayi kahani likhti hai, aur har moment history ban sakta hai. Yeh rivalry
                                 sirf
                                 runs aur wickets ki nahi, balkay pride, passion aur legacy ki hoti hai.
-                            </p><span class="expand" onclick="expandText(this)">... See
+                            </p><span class="expand" onclick="expandText(this)">see
                                 more</span>
                         </div>
                     </div>

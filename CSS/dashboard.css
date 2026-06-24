@@ -228,6 +228,7 @@ body {
 }
 
 .left-sidebar span,
+.contact-list>.contacts>div>span,
 .contact-list>.groups>div>span {
     font-weight: 600;
     font-size: 15px;
@@ -264,6 +265,7 @@ body {
 .main-content {
     overflow: auto;
     scrollbar-width: none;
+    width: 100%;
     max-width: 500px;
     margin: 0 auto;
 }
@@ -284,6 +286,7 @@ body {
 .top-bar .profile {
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
 .top-bar .modal-btn {
@@ -294,12 +297,17 @@ body {
     border-radius: 20px;
     display: flex;
     align-items: center;
+    gap: 3px;
     padding-left: 12px;
     cursor: pointer;
 }
 
 .top-bar .modal-btn:hover {
     background-color: #E6E8EA;
+}
+
+.top-bar .modal-btn span {
+    text-transform: capitalize;
 }
 
 .top-bar .icons {
@@ -349,6 +357,7 @@ body {
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+    user-select: none;
 }
 
 .create-story-box .plus-icon {
@@ -507,6 +516,7 @@ body {
 .post-modal-container .post-modal .modal-body .file-upload span {
     white-space: nowrap;
     width: 200px;
+    text-align: right;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #1877F2;
@@ -588,6 +598,7 @@ body {
 .details .left .name {
     font-size: 15px;
     font-weight: 600;
+    text-transform: capitalize;
     cursor: pointer;
 }
 
@@ -646,22 +657,36 @@ body {
     font-size: 18px;
 }
 
-.post-description p {
+.post-description .description-text {
     font-size: 15px;
     line-height: 22px;
+    max-height: 45px;
+    overflow: hidden;
     letter-spacing: 0.5px;
-    display: inline;
+    display: inline-block;
+    transition: max-height 0.2s ease;
+}
+
+.post-description .description-text.expand {
+    max-height: none;
 }
 
 .post-description span {
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
     user-select: none;
 }
 
-.post-image img {
-    width: 100%;
+.post-image {
+    display: flex;
+    justify-content: center;
+    border: solid rgba(0, 0, 0, 0.15);
     border-width: 1px 0;
+}
+
+.post-image img {
+    max-width: 100%;
+    max-height: 500px;
 }
 
 .like-detils {
@@ -874,6 +899,10 @@ body {
 
 @media (max-width: 500px) {
 
+    * {
+        cursor: default !important;
+    }
+
     .navbar {
         padding: 5px 12px 5px 12px;
     }
@@ -906,36 +935,18 @@ body {
     .like-detils .left img {
         width: 20px;
         height: 20px;
-        cursor: initial;
     }
 
     .like-detils .left span,
     .like-detils .right span {
         font-size: 13px;
         margin-left: 4px;
-        cursor: initial;
     }
 
     .like-detils .left span:hover,
     .like-detils .right span:hover {
         text-decoration: none;
     }
-
-
-    .post-modal-container .post-modal .modal-body .file-upload label,
-    .post-modal-container .post-modal .modal-body button,
-    .post-modal-container .post-modal .modal-header div,
-    .nav-right .icon,
-    .dropdown-menu .option,
-    .nav-left img,
-    .nav-center div,
-    .top-bar .modal-btn {
-        cursor: initial;
-    }
-
-
-
-
 }
 
 @media (max-width: 450px) {
@@ -966,5 +977,11 @@ body {
 
     .post-modal-container .post-modal .modal-body .file-upload span {
         width: 260px;
+    }
+
+    .like-btns {
+        grid-template-columns: 0.9fr 1.2fr 0.9fr;
+        padding: 4px;
+        font-size: 14px;
     }
 }

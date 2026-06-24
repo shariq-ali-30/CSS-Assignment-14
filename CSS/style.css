@@ -190,8 +190,13 @@ form hr {
         margin-left: 0;     
     }
 
+    .right-content {
+        width: 100%;
+        max-width: 370px;
+    }
+
     .right-content form {
-        width: 370px;
+        width: 100%;
     }
 
     .right-content i {
