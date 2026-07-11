@@ -8,7 +8,11 @@ if (!localStorage.getItem("allUsers")) {
 
 let allUsers = JSON.parse(localStorage.getItem("allUsers"))
 
-var currentUser = null
+let currentUser = JSON.parse(localStorage.getItem("currentUser"))
+
+if (currentUser) {
+    window.location.href = "/pages/dashboard.html"
+}
 
 function loginHandler(e) {
     e.preventDefault()
